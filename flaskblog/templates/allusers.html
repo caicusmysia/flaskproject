@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div>
+	    <table class="table table-hover">
+	    <caption>List of users</caption>
+		<thead>
+		<tr>
+		    <th scope="col"> # </th>
+		    <th scope="col"> Username </th>
+		    <th scope="col"> Email </th>
+		    <th scope="col"> IBAN </th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for user in users %}
+		<tr>
+		    <th scope="row">{{ loop.index0+1 }}</th>
+		    <td>{{ user.username }}</td>
+		    <td>{{ user.email }}</td>
+		    <td>{{ user.iban }}</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	    </table>
+	</div>
+{% endblock content %}
